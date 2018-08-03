@@ -1,0 +1,6 @@
+name: LobbyCore
+author: Cerus
+version: 1.0
+main: de.cerus.lobbycore.LobbyCore
+
+softdepend: [CoinsAPINB]
