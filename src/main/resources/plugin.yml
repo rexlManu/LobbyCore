@@ -3,4 +3,9 @@ author: Cerus
 version: 1.0
 main: de.cerus.lobbycore.LobbyCore
 
-softdepend: [CoinsAPINB]
+softdepend: [CoinsAPINB, PlaceholderAPI]
+commands:
+  test:
+  lobbycore:
+    aliases: [lc]
+  compass:

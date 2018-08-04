@@ -22,9 +22,22 @@ package de.cerus.lobbycore;
 
 public class Settings {
 
+    public static Object getValue(Setting setting) {
+        return LobbyCore.getInstance().getFileManager().getSettings().get(setting.getConfigPath());
+    }
+
     public enum Setting {
         COINSAPI_NEONN_BUKKIT("coinsapi.neonn_bukkit"),
-        LANGUAGE_FILE("language-file");
+        LANGUAGE_FILE("language-file"),
+        JOIN_ENABLED("join-message.enabled"),
+        QUIT_ENABLED("quit-message.enabled"),
+        JOIN_MESSAGE("join-message.message"),
+        QUIT_MESSAGE("quit-message.message"),
+        LOBBY_INVENTORY("lobby-inventory"),
+        TAB_ENABLED("tablist.enabled"),
+        TAB_HEADER("tablist.header"),
+        TAB_FOOTER("tablist.footer"),
+        FJ_COINS("first-join.coins");
 
         private String configPath;
 
@@ -35,9 +48,5 @@ public class Settings {
         public String getConfigPath() {
             return configPath;
         }
-    }
-
-    public static Object getValue(Setting setting) {
-        return LobbyCore.getInstance().getFileManager().getSettings().get(setting.getConfigPath());
     }
 }

@@ -32,19 +32,20 @@ import java.util.UUID;
 
 public class User {
 
-    public static User getUser(Player player){return new User(player);}
-
     private Player player;
     private File dataFile;
     private FileConfiguration data;
-
     public User(Player player) {
         this.player = player;
-        this.dataFile = new File("plugins//LobbyCore//playerdata//"+player.getUniqueId()+".yml");
+        this.dataFile = new File("plugins//LobbyCore//playerdata//" + player.getUniqueId() + ".yml");
         this.data = YamlConfiguration.loadConfiguration(this.dataFile);
     }
 
-    public void save(){
+    public static User getUser(Player player) {
+        return new User(player);
+    }
+
+    public void save() {
         try {
             getData().save(getDataFile());
         } catch (IOException e) {
@@ -52,43 +53,43 @@ public class User {
         }
     }
 
-    public boolean hasPlayedBefore(){
+    public boolean hasPlayedBefore() {
         return getDataFile().exists();
     }
 
-    public void createNew(){
-        if(getDataFile().exists()) throw new SecurityException("Playerdata does already exist!");
+    public void createNew() {
+        if (getDataFile().exists()) throw new SecurityException("Playerdata does already exist!");
         getData().set("coins", 0);
         getData().set("firstJoined", System.currentTimeMillis());
     }
 
-    public long getCoins(){
-        return (Boolean.valueOf(Settings.getValue(Settings.Setting.COINSAPI_NEONN_BUKKIT).toString()) ? ((long)CoinsAPI.getCoins(getUniqueId().toString())) : (getData().contains("coins") ? getData().getLong("coins") : 0L));
+    public long getCoins() {
+        return (Boolean.valueOf(Settings.getValue(Settings.Setting.COINSAPI_NEONN_BUKKIT).toString()) ? ((long) CoinsAPI.getCoins(getUniqueId().toString())) : (getData().contains("coins") ? getData().getLong("coins") : 0L));
     }
 
-    public void addCoins(int amount){
-        if(Boolean.valueOf(Settings.getValue(Settings.Setting.COINSAPI_NEONN_BUKKIT).toString())){
+    public void addCoins(int amount) {
+        if (Boolean.valueOf(Settings.getValue(Settings.Setting.COINSAPI_NEONN_BUKKIT).toString())) {
             CoinsAPI.addCoins(getUniqueId().toString(), amount);
         } else {
-            getData().set("coins", getCoins()+amount);
+            getData().set("coins", getCoins() + amount);
             save();
         }
     }
 
-    public void removeCoins(int amount){
-        if(Boolean.valueOf(Settings.getValue(Settings.Setting.COINSAPI_NEONN_BUKKIT).toString())){
+    public void removeCoins(int amount) {
+        if (Boolean.valueOf(Settings.getValue(Settings.Setting.COINSAPI_NEONN_BUKKIT).toString())) {
             CoinsAPI.removeCoins(getUniqueId().toString(), amount);
         } else {
-            getData().set("coins", getCoins()-amount);
+            getData().set("coins", getCoins() - amount);
             save();
         }
     }
 
-    public boolean hasCoins(User user, long amount){
+    public boolean hasCoins(User user, long amount) {
         return getCoins() >= amount;
     }
 
-    public UUID getUniqueId(){
+    public UUID getUniqueId() {
         return getPlayer().getUniqueId();
     }
 

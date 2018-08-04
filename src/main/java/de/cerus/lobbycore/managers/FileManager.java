@@ -20,6 +20,8 @@
 
 package de.cerus.lobbycore.managers;
 
+import de.cerus.lobbycore.LobbyCore;
+import de.cerus.lobbycore.utilities.UtilClass;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 
@@ -42,18 +44,35 @@ public class FileManager {
         this.languageEn = YamlConfiguration.loadConfiguration(this.languageEnFile);
     }
 
-    public void init(){
-        if(!getSettingsFile().exists()){
-            getSettings().set("prefix", "&2§lL§a§lobby§2§lC§a§lore §8×» §7");
+    public void init() {
+        if (!getSettingsFile().exists()) {
+            getSettings().set("prefix", "&2&lL&a&lobby&2§lC&a§lore &8×» &7");
             getSettings().set("language-file", "plugins//LobbyCore//languages//EN.yml");
-            getSettings().set("coinsapi.neonn_bukkit", true);
-        }
-        if(!getLanguageEnFile().exists()){
+            getSettings().set("coinsapi.neonn_bukkit", false);
+            getSettings().set("join-message.enabled", true);
+            getSettings().set("join-message.message", "&8&l[&a&l+&8&l] &e{Player}");
+            getSettings().set("quit-message.enabled", true);
+            getSettings().set("quit-message.message", "&8&l[&c&l-&8&l] &e{Player}");
+            getSettings().set("tablist.enabled", true);
+            getSettings().set("tablist.header", "§0{new-line}§8« §2§lL§a§lobby§2§lC§a§lore §8»{new-line}§e{CurrentPlayers} §7/ §e{MaxPlayers}{new-line}§0");
+            getSettings().set("tablist.footer", "§0{new-line}§bVery powerful lobby-system{new-line}§6Coins: §7%lobbycore_player_coins%{new-line}§0");
+            getSettings().set("first-join.coins", 100);
 
+            save();
+        }
+        if (!getLanguageEnFile().exists()) {
+
+        }
+
+        if (getSettings().contains("lobby-inventory")) {
+            for (String s : LobbyCore.getInstance().getFileManager().getSettings().getConfigurationSection("lobby-inventory").getKeys(false)) {
+                if (Integer.parseInt(s.split(";")[0]) != -1)
+                    UtilClass.getLobbyInventory().put(UtilClass.stringBlobToItem(LobbyCore.getInstance().getFileManager().getSettings().getString("lobby-inventory." + s)), s);
+            }
         }
     }
 
-    public boolean save(){
+    public boolean save() {
         try {
             getSettings().save(getSettingsFile());
             return true;
@@ -63,7 +82,7 @@ public class FileManager {
         return false;
     }
 
-    public boolean saveLanguageEN(){
+    public boolean saveLanguageEN() {
         try {
             getLanguageEn().save(getLanguageEnFile());
             return true;

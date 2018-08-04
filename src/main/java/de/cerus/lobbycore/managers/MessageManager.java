@@ -29,10 +29,10 @@ import java.io.File;
 
 public class MessageManager {
 
-    public static String getMessage(boolean withPrefix, String message){
+    public static String getMessage(boolean withPrefix, String message) {
         FileConfiguration configuration = YamlConfiguration.loadConfiguration(new File(Settings.getValue(Settings.Setting.LANGUAGE_FILE).toString()));
 
-        return (withPrefix ? (LobbyCore.getInstance().getFileManager().getSettings().getString("prefix")+(configuration.contains(message) ? configuration.getString(message) : "§cError: Message not found. Input: "+message+", Output: null")) : (configuration.contains(message) ? configuration.getString(message) : "§cError: Message not found. Input: "+message+", Output: null"));
+        return (withPrefix ? (LobbyCore.getInstance().getFileManager().getSettings().getString("prefix") + (configuration.contains(message) ? configuration.getString(message) : "§cError: Message not found. Input: " + message + ", Output: null")) : (configuration.contains(message) ? configuration.getString(message) : "§cError: Message not found. Input: " + message + ", Output: null"));
     }
 
 }
