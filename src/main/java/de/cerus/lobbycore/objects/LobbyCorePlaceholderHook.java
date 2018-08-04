@@ -25,6 +25,7 @@ import me.clip.placeholderapi.external.EZPlaceholderHook;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 
+@SuppressWarnings("deprecation")
 public class LobbyCorePlaceholderHook extends EZPlaceholderHook {
     public LobbyCorePlaceholderHook(Plugin plugin) {
         super(plugin, "lobbycore");

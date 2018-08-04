@@ -24,6 +24,7 @@ import de.cerus.lobbycore.LobbyCore;
 import de.cerus.lobbycore.utilities.UtilClass;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
+import org.bukkit.inventory.ItemStack;
 
 import java.io.File;
 import java.io.IOException;
@@ -69,6 +70,15 @@ public class FileManager {
                 if (Integer.parseInt(s.split(";")[0]) != -1)
                     UtilClass.getLobbyInventory().put(UtilClass.stringBlobToItem(LobbyCore.getInstance().getFileManager().getSettings().getString("lobby-inventory." + s)), s);
             }
+        }
+        if (getSettings().contains("compass-content")) {
+            for (String s : LobbyCore.getInstance().getFileManager().getSettings().getConfigurationSection("compass-content").getKeys(false)) {
+                if (Integer.parseInt(s) != -1)
+                    UtilClass.getCompassContent().put(UtilClass.stringBlobToItem(LobbyCore.getInstance().getFileManager().getSettings().getString("compass-content." + s + ".item")), s + ";" + LobbyCore.getInstance().getFileManager().getSettings().getString("compass-content." + s + ".location"));
+            }
+        }
+        for (ItemStack stack : UtilClass.getCompassContent().keySet()) {
+            UtilClass.getCompass().setItem(Integer.parseInt(UtilClass.getCompassContent().get(stack).split(";")[0]), stack);
         }
     }
 

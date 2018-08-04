@@ -22,12 +22,11 @@ package de.cerus.lobbycore.commands;
 
 import de.cerus.lobbycore.LobbyCore;
 import de.cerus.lobbycore.utilities.UtilClass;
-import org.bukkit.Bukkit;
+import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.bukkit.inventory.Inventory;
 
 public class CompassCommand implements CommandExecutor {
     @Override
@@ -36,15 +35,29 @@ public class CompassCommand implements CommandExecutor {
         Player player = (Player) commandSender;
 
         if (args.length == 0) {
-            Inventory inventory = Bukkit.createInventory(null, 5 * 9, "§2§lT§a§leleporter");
-
-            if (LobbyCore.getInstance().getFileManager().getSettings().contains("compass-contents")) {
-                for (String string : LobbyCore.getInstance().getFileManager().getSettings().getConfigurationSection("compass-contents").getKeys(false)) {
-                    inventory.setItem(Integer.parseInt(string.split(";")[0]), UtilClass.stringBlobToItem(LobbyCore.getInstance().getFileManager().getSettings().getString("compass-content." + string)));
+            player.openInventory(UtilClass.getCompass());
+        } else if (args.length == 2) {
+            if (args[0].equalsIgnoreCase("additem")) {
+                if (!player.hasPermission("lc.admin.addcompassitem")) {
+                    //SEND NO PERM MESSAGE
+                    return false;
                 }
-            }
+                if (player.getInventory().getItem(player.getInventory().getHeldItemSlot()).getType() == Material.AIR) {
+                    //SEND WRONG MAT MESSAGE
+                    return false;
+                }
+                if (!args[1].matches("\\d+")) {
+                    //SEND ONLY NUMBERS MESSAGE
+                    return false;
+                }
 
-            player.openInventory(inventory);
+                String locStrting = UtilClass.locationToString(player.getLocation());
+                int slot = Integer.parseInt(args[1]);
+                LobbyCore.getInstance().getFileManager().getSettings().set("compass-content." + slot + ".location", locStrting);
+                LobbyCore.getInstance().getFileManager().getSettings().set("compass-content." + slot + ".item", UtilClass.itemToStringBlob(player.getInventory().getItem(player.getInventory().getHeldItemSlot())));
+                LobbyCore.getInstance().getFileManager().save();
+                player.sendMessage(locStrting);
+            }
         }
         return false;
     }

@@ -22,8 +22,10 @@ package de.cerus.lobbycore.utilities;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.Location;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
 import java.lang.reflect.Field;
@@ -33,6 +35,8 @@ import java.util.Map;
 
 public class UtilClass {
     private static Map<ItemStack, String> lobbyInventory = new HashMap<>();
+    private static Map<ItemStack, String> compassContent = new HashMap<>();
+    private static Inventory compass = Bukkit.createInventory(null, 5 * 9, "§2§lT§a§leleporter");
 
     public static String itemToStringBlob(ItemStack itemStack) {
         YamlConfiguration config = new YamlConfiguration();
@@ -134,5 +138,22 @@ public class UtilClass {
 
     public static Map<ItemStack, String> getLobbyInventory() {
         return lobbyInventory;
+    }
+
+    public static Map<ItemStack, String> getCompassContent() {
+        return compassContent;
+    }
+
+    public static String locationToString(Location location) {
+        return new StringBuilder().append(location.getWorld().getName()).append("#").append(location.getX()).append("#").append(location.getY()).append("#").append(location.getZ()).append("#").append(location.getPitch()).append("#").append(location.getYaw()).toString();
+    }
+
+    public static Location locationFromString(String string) {
+        String[] strings = string.split("#");
+        return new Location(Bukkit.getWorld(strings[0]), Double.valueOf(strings[1]), Double.valueOf(strings[2]), Double.valueOf(strings[3]), Float.valueOf(strings[4]), Float.valueOf(strings[5]));
+    }
+
+    public static Inventory getCompass() {
+        return compass;
     }
 }
