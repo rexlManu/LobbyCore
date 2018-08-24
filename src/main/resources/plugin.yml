@@ -9,3 +9,4 @@ commands:
   lobbycore:
     aliases: [lc]
   compass:
+  gadgets:

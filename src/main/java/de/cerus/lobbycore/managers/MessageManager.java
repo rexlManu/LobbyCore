@@ -22,17 +22,33 @@ package de.cerus.lobbycore.managers;
 
 import de.cerus.lobbycore.LobbyCore;
 import de.cerus.lobbycore.Settings;
+import me.clip.placeholderapi.PlaceholderAPI;
+import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
+import org.bukkit.entity.Player;
 
 import java.io.File;
 
 public class MessageManager {
 
-    public static String getMessage(boolean withPrefix, String message) {
-        FileConfiguration configuration = YamlConfiguration.loadConfiguration(new File(Settings.getValue(Settings.Setting.LANGUAGE_FILE).toString()));
+    private static FileConfiguration configuration;
 
-        return (withPrefix ? (LobbyCore.getInstance().getFileManager().getSettings().getString("prefix") + (configuration.contains(message) ? configuration.getString(message) : "§cError: Message not found. Input: " + message + ", Output: null")) : (configuration.contains(message) ? configuration.getString(message) : "§cError: Message not found. Input: " + message + ", Output: null"));
+    public static void init() {
+        configuration = YamlConfiguration.loadConfiguration(new File(Settings.getValue(Settings.Setting.LANGUAGE_FILE).toString()));
     }
 
+    public static String getMessage(boolean withPrefix, String message) {
+        return ChatColor.translateAlternateColorCodes('&', (withPrefix ? (LobbyCore.getInstance().getFileManager().getSettings().getString("prefix") + (getConfiguration().contains(message) ? getConfiguration().getString(message) : "§cError: Message not found. Input: " + message + ", Output: null")) : (getConfiguration().contains(message) ? getConfiguration().getString(message) : "§cError: Message not found. Input: " + message + ", Output: null")));
+    }
+
+    public static String getMessage(boolean withPrefix, String message, Player player) {
+        if (LobbyCore.getInstance().isPapiEnabled()) {
+            return PlaceholderAPI.setPlaceholders(player, ChatColor.translateAlternateColorCodes('&', (withPrefix ? (LobbyCore.getInstance().getFileManager().getSettings().getString("prefix") + (getConfiguration().contains(message) ? getConfiguration().getString(message) : "§cError: Message not found. Input: " + message + ", Output: null")) : (getConfiguration().contains(message) ? getConfiguration().getString(message) : "§cError: Message not found. Input: " + message + ", Output: null"))));
+        } else return getMessage(withPrefix, message);
+    }
+
+    public static FileConfiguration getConfiguration() {
+        return configuration;
+    }
 }

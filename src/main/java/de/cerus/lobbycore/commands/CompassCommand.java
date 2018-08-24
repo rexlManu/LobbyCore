@@ -21,6 +21,7 @@
 package de.cerus.lobbycore.commands;
 
 import de.cerus.lobbycore.LobbyCore;
+import de.cerus.lobbycore.managers.MessageManager;
 import de.cerus.lobbycore.utilities.UtilClass;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
@@ -39,24 +40,25 @@ public class CompassCommand implements CommandExecutor {
         } else if (args.length == 2) {
             if (args[0].equalsIgnoreCase("additem")) {
                 if (!player.hasPermission("lc.admin.addcompassitem")) {
-                    //SEND NO PERM MESSAGE
+                    player.sendMessage(MessageManager.getMessage(true, "no-perms", player));
                     return false;
                 }
                 if (player.getInventory().getItem(player.getInventory().getHeldItemSlot()).getType() == Material.AIR) {
-                    //SEND WRONG MAT MESSAGE
+                    player.sendMessage(MessageManager.getMessage(true, "wrong-material", player));
                     return false;
                 }
                 if (!args[1].matches("\\d+")) {
-                    //SEND ONLY NUMBERS MESSAGE
+                    player.sendMessage(MessageManager.getMessage(true, "only-numbers", player));
                     return false;
                 }
 
-                String locStrting = UtilClass.locationToString(player.getLocation());
+                String locString = UtilClass.locationToString(player.getLocation());
                 int slot = Integer.parseInt(args[1]);
-                LobbyCore.getInstance().getFileManager().getSettings().set("compass-content." + slot + ".location", locStrting);
+                LobbyCore.getInstance().getFileManager().getSettings().set("compass-content." + slot + ".location", locString);
                 LobbyCore.getInstance().getFileManager().getSettings().set("compass-content." + slot + ".item", UtilClass.itemToStringBlob(player.getInventory().getItem(player.getInventory().getHeldItemSlot())));
                 LobbyCore.getInstance().getFileManager().save();
-                player.sendMessage(locStrting);
+
+                player.sendMessage(MessageManager.getMessage(true, "compass-updated-successfully", player));
             }
         }
         return false;

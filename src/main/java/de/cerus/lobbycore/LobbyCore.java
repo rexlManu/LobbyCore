@@ -21,11 +21,14 @@
 package de.cerus.lobbycore;
 
 import de.cerus.lobbycore.commands.CompassCommand;
+import de.cerus.lobbycore.commands.GadgetsCommand;
 import de.cerus.lobbycore.commands.LobbyCoreCommand;
-import de.cerus.lobbycore.listeners.CommandTest;
-import de.cerus.lobbycore.listeners.PlayerInteractListener;
-import de.cerus.lobbycore.listeners.PlayerJoinListener;
+import de.cerus.lobbycore.gadgets.FlyfeatherGadget;
+import de.cerus.lobbycore.listeners.*;
+import de.cerus.lobbycore.managers.CorePacketManager;
 import de.cerus.lobbycore.managers.FileManager;
+import de.cerus.lobbycore.managers.GadgetManager;
+import de.cerus.lobbycore.managers.MessageManager;
 import de.cerus.lobbycore.objects.LobbyCorePlaceholderHook;
 import de.cerus.lobbycore.utilities.Updater;
 import org.bukkit.Bukkit;
@@ -33,11 +36,15 @@ import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.io.File;
+
 public class LobbyCore extends JavaPlugin {
 
     private static LobbyCore instance;
     private FileManager fileManager;
     private Updater updater;
+    private GadgetManager gadgetManager;
+    private CorePacketManager corePacketManager;
 
     private boolean papiEnabled = false;
 
@@ -65,6 +72,10 @@ public class LobbyCore extends JavaPlugin {
         registerListeners();
         consoleCommandSender.sendMessage("§6[STARTUP] §rRegistering commands...");
         registerCommands();
+        consoleCommandSender.sendMessage("§6[STARTUP] §rRegistering gadgets...");
+        registerGadgets();
+        consoleCommandSender.sendMessage("§6[STARTUP] §rLoading Packets...");
+        loadPackets();
 
         getUpdater().checkForNewUpdate();
 
@@ -73,16 +84,28 @@ public class LobbyCore extends JavaPlugin {
         consoleCommandSender.sendMessage(" ");
     }
 
+    private void loadPackets() {
+        File packetDir = new File("LobbyCorePackets");
+        packetDir.mkdirs();
+
+        for (File file : packetDir.listFiles()) {
+            if (file.getName().endsWith(".jar")) getCorePacketManager().loadCorePacket(file);
+        }
+    }
+
     public void setInstances() {
         instance = this;
         this.fileManager = new FileManager();
         this.updater = new Updater("NONE", this);
+        this.gadgetManager = new GadgetManager();
+        this.corePacketManager = new CorePacketManager();
 
         if (Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null) papiEnabled = true;
     }
 
     public void initiateInstances() {
         this.fileManager.init();
+        MessageManager.init();
 
         if (isPapiEnabled()) new LobbyCorePlaceholderHook(getInstance()).hook();
     }
@@ -91,12 +114,19 @@ public class LobbyCore extends JavaPlugin {
         PluginManager pluginManager = Bukkit.getPluginManager();
         pluginManager.registerEvents(new PlayerJoinListener(), getInstance());
         pluginManager.registerEvents(new PlayerInteractListener(), getInstance());
+        pluginManager.registerEvents(new InventoryClickListener(), getInstance());
+        pluginManager.registerEvents(new BlockBreakBuildListener(), getInstance());
     }
 
     public void registerCommands() {
         getCommand("test").setExecutor(new CommandTest());
         getCommand("lobbycore").setExecutor(new LobbyCoreCommand());
         getCommand("compass").setExecutor(new CompassCommand());
+        getCommand("gadgets").setExecutor(new GadgetsCommand());
+    }
+
+    public void registerGadgets() {
+        getGadgetManager().registerGadget(new FlyfeatherGadget());
     }
 
     public FileManager getFileManager() {
@@ -107,7 +137,15 @@ public class LobbyCore extends JavaPlugin {
         return updater;
     }
 
+    public GadgetManager getGadgetManager() {
+        return gadgetManager;
+    }
+
     public boolean isPapiEnabled() {
         return papiEnabled;
+    }
+
+    public CorePacketManager getCorePacketManager() {
+        return corePacketManager;
     }
 }

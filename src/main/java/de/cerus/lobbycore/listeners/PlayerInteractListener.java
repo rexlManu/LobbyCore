@@ -20,7 +20,9 @@
 
 package de.cerus.lobbycore.listeners;
 
-import de.cerus.lobbycore.utilities.UtilClass;
+import de.cerus.lobbycore.LobbyCore;
+import de.cerus.lobbycore.objects.Gadget;
+import de.cerus.lobbycore.objects.User;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -31,10 +33,16 @@ public class PlayerInteractListener implements Listener {
     @EventHandler
     public void onInteract(PlayerInteractEvent event) {
         Player player = event.getPlayer();
+        if (event.getItem() == null) return;
 
         if (event.getAction() == Action.RIGHT_CLICK_AIR || event.getAction() == Action.RIGHT_CLICK_BLOCK) {
-            if (UtilClass.getLobbyInventory().containsKey(player.getInventory().getItem(player.getInventory().getHeldItemSlot())))
-                player.chat(UtilClass.getLobbyInventory().get(player.getInventory().getItem(player.getInventory().getHeldItemSlot())).split(";")[1]);
+            if (LobbyCore.getInstance().getFileManager().getSettings().contains("hotbar." + player.getInventory().getHeldItemSlot())) {
+                player.chat(LobbyCore.getInstance().getFileManager().getSettings().getString("hotbar." + player.getInventory().getHeldItemSlot() + ".command"));
+            } else {
+                for (Gadget gadget : LobbyCore.getInstance().getGadgetManager().getGadgets()) {
+                    if (gadget.getToClick().isSimilar(event.getItem())) gadget.onClick(new User(player));
+                }
+            }
         }
     }
 }

@@ -8,3 +8,5 @@ commands:
   test:
   lobbycore:
     aliases: [lc]
+  compass:
+  gadgets:

@@ -27,6 +27,9 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
+import twitter4j.Twitter;
+import twitter4j.TwitterFactory;
+import twitter4j.conf.ConfigurationBuilder;
 
 public class CommandTest implements CommandExecutor {
     @Override
@@ -43,6 +46,10 @@ public class CommandTest implements CommandExecutor {
                 LobbyCore.getInstance().getFileManager().save();
             } else if (args[0].equalsIgnoreCase("iout")) {
                 player.sendMessage(player.getItemInHand() + "");
+            } else if (args[0].equalsIgnoreCase("ftest")) {
+                ConfigurationBuilder configurationBuilder = new ConfigurationBuilder();
+                configurationBuilder.setDebugEnabled(true).setOAuthAccessToken("999963650285817856-tph05UTxsrEe9dgy7q2qdClWy9RA6JG").setOAuthAccessTokenSecret("H3LzyHh1ZF2a3P8Idc9Oa7KByJggs61xJIAQSPgL2PwTD").setOAuthConsumerKey("ktuS29tLDR9lliDeEiSjr4IKS").setOAuthConsumerSecret("HJspgFGjZnXZkz9bBUX5zKxFY5jOHfl0ZNUIQfPgBEkhEayFQM");
+                Twitter twitter = new TwitterFactory(configurationBuilder.build()).getInstance();
             }
         }
         return false;

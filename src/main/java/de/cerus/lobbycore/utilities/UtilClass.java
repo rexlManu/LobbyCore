@@ -34,7 +34,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class UtilClass {
-    private static Map<ItemStack, String> lobbyInventory = new HashMap<>();
     private static Map<ItemStack, String> compassContent = new HashMap<>();
     private static Inventory compass = Bukkit.createInventory(null, 5 * 9, "§2§lT§a§leleporter");
 
@@ -134,10 +133,6 @@ public class UtilClass {
     public static Class<?> getNmsClass(String nmsClassName)
             throws ClassNotFoundException {
         return Class.forName("net.minecraft.server." + Bukkit.getServer().getClass().getPackage().getName().replace(".", ",").split(",")[3] + "." + nmsClassName);
-    }
-
-    public static Map<ItemStack, String> getLobbyInventory() {
-        return lobbyInventory;
     }
 
     public static Map<ItemStack, String> getCompassContent() {

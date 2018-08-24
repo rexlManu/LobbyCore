@@ -62,14 +62,23 @@ public class FileManager {
             save();
         }
         if (!getLanguageEnFile().exists()) {
+            getLanguageEn().set("no-perms", "&cYou do not have the right permissions.");
+            getLanguageEn().set("wrong-material", "&cThis isn't a valid material.");
+            getLanguageEn().set("only-numbers", "&cOnly numbers are allowed.");
+            getLanguageEn().set("hotbar-updated-successfully", "&aHotbar updated successfully!");
+            getLanguageEn().set("compass-updated-successfully", "&aCompass updated successfully!");
+            getLanguageEn().set("gadget-list", "&7Gadget list:");
+            getLanguageEn().set("too-many-gadgets", "&cThe server has too many gadgets registered! Please contact the server owner.");
+            getLanguageEn().set("gadget-not-bought", "&cYou don't own this gadget! You can buy it for {Price} Coins with &e/gadgets buy {Gadget}&7.");
+            getLanguageEn().set("gadget-bought-successfully", "&aYou bought this gadget successfully!");
+            getLanguageEn().set("not-enough-coins", "&cYou do not have enough coins!");
+            getLanguageEn().set("gadget-already-bought", "&cYou already have this gadget!");
+            getLanguageEn().set("gadget-doesnt-exist", "&cThis gadget doesn't exist!");
 
-        }
+            getLanguageEn().set("gadget.flyfeather.name", "Flyfeather");
+            getLanguageEn().set("gadget.flyfeather.lore", "Fly around with this nice little gadget!");
 
-        if (getSettings().contains("lobby-inventory")) {
-            for (String s : LobbyCore.getInstance().getFileManager().getSettings().getConfigurationSection("lobby-inventory").getKeys(false)) {
-                if (Integer.parseInt(s.split(";")[0]) != -1)
-                    UtilClass.getLobbyInventory().put(UtilClass.stringBlobToItem(LobbyCore.getInstance().getFileManager().getSettings().getString("lobby-inventory." + s)), s);
-            }
+            saveLanguageEN();
         }
         if (getSettings().contains("compass-content")) {
             for (String s : LobbyCore.getInstance().getFileManager().getSettings().getConfigurationSection("compass-content").getKeys(false)) {

@@ -31,13 +31,13 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
-import org.bukkit.inventory.ItemStack;
 
 public class PlayerJoinListener implements Listener {
     @EventHandler
     public void onJoin(PlayerJoinEvent event) {
         Player player = event.getPlayer();
         User user = User.getUser(player);
+        player.getInventory().clear();
 
         if (!user.hasPlayedBefore()) {
             user.createNew();
@@ -49,12 +49,12 @@ public class PlayerJoinListener implements Listener {
             event.setJoinMessage(ChatColor.translateAlternateColorCodes('&', LobbyCore.getInstance().isPapiEnabled() ? PlaceholderAPI.setPlaceholders(player, Settings.getValue(Settings.Setting.JOIN_MESSAGE).toString().replace("{Player}", player.getName())) : Settings.getValue(Settings.Setting.JOIN_MESSAGE).toString().replace("{Player}", player.getName())));
         if ((Boolean) Settings.getValue(Settings.Setting.TAB_ENABLED))
             UtilClass.sendTablist(player, ChatColor.translateAlternateColorCodes('&', PlaceholderAPI.setPlaceholders(player, Settings.getValue(Settings.Setting.TAB_HEADER).toString().replace("{new-line}", "\n").replace("{CurrentPlayers}", "" + Bukkit.getOnlinePlayers().size()).replace("{MaxPlayers}", "" + Bukkit.getMaxPlayers()))), ChatColor.translateAlternateColorCodes('&', PlaceholderAPI.setPlaceholders(player, Settings.getValue(Settings.Setting.TAB_FOOTER).toString().replace("{new-line}", "\n").replace("{CurrentPlayers}", "" + Bukkit.getOnlinePlayers().size()).replace("{MaxPlayers}", "" + Bukkit.getMaxPlayers()))));
-        if (LobbyCore.getInstance().getFileManager().getSettings().contains("lobby-inventory")) {
+        if (LobbyCore.getInstance().getFileManager().getSettings().contains("hotbar")) {
             Bukkit.getScheduler().runTaskAsynchronously(LobbyCore.getInstance(), new Runnable() {
                 @Override
                 public void run() {
-                    for (ItemStack stack : UtilClass.getLobbyInventory().keySet()) {
-                        player.getInventory().setItem(Integer.parseInt(UtilClass.getLobbyInventory().get(stack).split(";")[0]), stack);
+                    for (String key : LobbyCore.getInstance().getFileManager().getSettings().getConfigurationSection("hotbar").getKeys(false)) {
+                        player.getInventory().setItem(Integer.parseInt(key), UtilClass.stringBlobToItem(LobbyCore.getInstance().getFileManager().getSettings().getString("hotbar." + key + ".item")));
                     }
                 }
             });

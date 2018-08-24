@@ -28,6 +28,8 @@ import org.bukkit.entity.Player;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 public class User {
@@ -85,8 +87,26 @@ public class User {
         }
     }
 
-    public boolean hasCoins(User user, long amount) {
+    public boolean hasCoins(long amount) {
         return getCoins() >= amount;
+    }
+
+    public boolean hasGadget(Gadget gadget) {
+        return getData().getStringList("gadgets").contains(gadget.getName().toUpperCase() + "-" + gadget.getId());
+    }
+
+    public void addGadget(Gadget gadget) {
+        if (!getData().contains("gadgets")) {
+            List<String> list = new ArrayList<>();
+            list.add(gadget.getName().toUpperCase() + "-" + gadget.getId());
+            getData().set("gadgets", list);
+            save();
+        } else {
+            List<String> list = getData().getStringList("gadgets");
+            list.add(gadget.getName().toUpperCase() + "-" + gadget.getId());
+            getData().set("gadgets", list);
+            save();
+        }
     }
 
     public UUID getUniqueId() {
