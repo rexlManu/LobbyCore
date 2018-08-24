@@ -21,7 +21,9 @@
 package de.cerus.lobbycore.managers;
 
 import de.cerus.lobbycore.objects.Gadget;
+import de.cerus.lobbycore.objects.Pagination;
 import de.cerus.lobbycore.utilities.ItemBuilder;
+import org.bukkit.inventory.ItemStack;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,6 +31,7 @@ import java.util.List;
 public class GadgetManager {
 
     private List<Gadget> gadgets;
+    private Pagination<ItemStack> gadgetPagination;
 
     public GadgetManager() {
         this.gadgets = new ArrayList<>();
@@ -59,5 +62,17 @@ public class GadgetManager {
 
         gadget.setToClick(new ItemBuilder(gadget.getToClick()).setAmount(1).setDisplayname(gadget.getName()).setLore(gadget.getLore()).build());
         getGadgets().remove(gadget);
+    }
+
+    public void fillGadgetPagination() {
+        List<ItemStack> list = new ArrayList<>();
+        for (Gadget gadget : getGadgets()) {
+            list.add(new ItemBuilder(gadget.getToClick()).setDisplayname("§e" + gadget.getName()).setLore("§7" + gadget.getLore()).build());
+        }
+        this.gadgetPagination = new Pagination<>(1 * 9, list);
+    }
+
+    public Pagination<ItemStack> getGadgetPagination() {
+        return gadgetPagination;
     }
 }

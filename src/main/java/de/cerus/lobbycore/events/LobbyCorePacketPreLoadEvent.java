@@ -27,14 +27,18 @@ import java.io.File;
 
 public class LobbyCorePacketPreLoadEvent extends Event {
     private File packetFile;
-
+    private static final HandlerList handlers = new HandlerList();
     public LobbyCorePacketPreLoadEvent(File packetFile) {
         this.packetFile = packetFile;
     }
 
+    public static HandlerList getHandlerList() {
+        return handlers;
+    }
+
     @Override
     public HandlerList getHandlers() {
-        return null;
+        return handlers;
     }
 
     public File getPacketFile() {

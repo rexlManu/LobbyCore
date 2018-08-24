@@ -26,12 +26,13 @@ import de.cerus.lobbycore.objects.Gadget;
 import de.cerus.lobbycore.objects.User;
 import de.cerus.lobbycore.utilities.ItemBuilder;
 import org.bukkit.Bukkit;
+import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.inventory.Inventory;
+import org.bukkit.inventory.ItemStack;
 
 public class GadgetsCommand implements CommandExecutor {
     @Override
@@ -72,22 +73,15 @@ public class GadgetsCommand implements CommandExecutor {
             return false;
         }
 
-        Inventory inventory = null;
+        Inventory inventory = Bukkit.createInventory(null, 2 * 9, "§5§lG§d§ladgets §8| §70");
 
-        if (LobbyCore.getInstance().getGadgetManager().getGadgets().size() < 6) {
-            inventory = Bukkit.createInventory(null, InventoryType.HOPPER, "§5§lG§d§ladgets");
-        } else if (LobbyCore.getInstance().getGadgetManager().getGadgets().size() < 10) {
-            inventory = Bukkit.createInventory(null, 9, "§5§lG§d§ladgets");
-        } else if (LobbyCore.getInstance().getGadgetManager().getGadgets().size() < 19) {
-            inventory = Bukkit.createInventory(null, 18, "§5§lG§d§ladgets");
-        } else {
-            player.sendMessage(MessageManager.getMessage(true, "too-many-gadgets", player));
-            return false;
+        if (LobbyCore.getInstance().getGadgetManager().getGadgetPagination().totalPages() > 0) {
+            for (ItemStack stack : LobbyCore.getInstance().getGadgetManager().getGadgetPagination().getPage(0)) {
+                inventory.addItem(stack);
+            }
         }
-
-        for (Gadget gadget : LobbyCore.getInstance().getGadgetManager().getGadgets()) {
-            inventory.addItem(new ItemBuilder(gadget.getToClick()).setDisplayname("§e" + gadget.getName()).setLore("§7" + gadget.getLore()).build());
-        }
+        inventory.setItem(9, new ItemBuilder(Material.ARROW).setDisplayname("§6«").build());
+        inventory.setItem(17, new ItemBuilder(Material.ARROW).setDisplayname("§6»").build());
         player.openInventory(inventory);
 
         return false;

@@ -47,6 +47,7 @@ public class FileManager {
 
     public void init() {
         if (!getSettingsFile().exists()) {
+            getSettings().set("config-version", 0);
             getSettings().set("prefix", "&2&lL&a&lobby&2§lC&a§lore &8×» &7");
             getSettings().set("language-file", "plugins//LobbyCore//languages//EN.yml");
             getSettings().set("coinsapi.neonn_bukkit", false);
@@ -74,6 +75,7 @@ public class FileManager {
             getLanguageEn().set("not-enough-coins", "&cYou do not have enough coins!");
             getLanguageEn().set("gadget-already-bought", "&cYou already have this gadget!");
             getLanguageEn().set("gadget-doesnt-exist", "&cThis gadget doesn't exist!");
+            getLanguageEn().set("gadget-successfully-unregistered", "&aGadget was unregistered successfully.");
 
             getLanguageEn().set("gadget.flyfeather.name", "Flyfeather");
             getLanguageEn().set("gadget.flyfeather.lore", "Fly around with this nice little gadget!");

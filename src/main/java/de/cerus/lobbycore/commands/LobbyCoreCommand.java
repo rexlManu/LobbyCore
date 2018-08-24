@@ -23,16 +23,20 @@ package de.cerus.lobbycore.commands;
 import de.cerus.lobbycore.LobbyCore;
 import de.cerus.lobbycore.managers.MessageManager;
 import de.cerus.lobbycore.objects.Gadget;
+import de.cerus.lobbycore.utilities.ItemBuilder;
 import de.cerus.lobbycore.utilities.UtilClass;
 import net.md_5.bungee.api.chat.ClickEvent;
 import net.md_5.bungee.api.chat.ComponentBuilder;
 import net.md_5.bungee.api.chat.HoverEvent;
 import net.md_5.bungee.api.chat.TextComponent;
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.Inventory;
+import org.bukkit.inventory.ItemStack;
 
 public class LobbyCoreCommand implements CommandExecutor {
     @Override
@@ -99,6 +103,16 @@ public class LobbyCoreCommand implements CommandExecutor {
                     allGadgets += gadget.getName() + " (" + gadget.getId() + ")" + "§8, §e";
                 }
                 player.sendMessage(allGadgets.equals("§e") ? "§8✖" : allGadgets.substring(0, allGadgets.length() - 6));
+            } else if (args[0].equalsIgnoreCase("packets")) {
+                Inventory inventory = Bukkit.createInventory(null, 4 * 9, "Packets | 0");
+                if (LobbyCore.getInstance().getCorePacketManager().getPacketPagination().totalPages() > 0) {
+                    for (ItemStack stack : LobbyCore.getInstance().getCorePacketManager().getPacketPagination().getPage(0)) {
+                        inventory.addItem(stack);
+                    }
+                }
+                inventory.setItem(27, new ItemBuilder(Material.ARROW).setDisplayname("§6«").build());
+                inventory.setItem(35, new ItemBuilder(Material.ARROW).setDisplayname("§6»").build());
+                player.openInventory(inventory);
             }
         } else if (args.length == 2) {
             if (args[0].equalsIgnoreCase("help")) {
@@ -112,9 +126,29 @@ public class LobbyCoreCommand implements CommandExecutor {
                 } else if (args[1].equalsIgnoreCase("2")) {
                     player.sendMessage("§8§m--------------------------------");
                     player.sendMessage("§2§lL§a§lobby§2§lC§a§lore §8| §7Help Page 1");
-                    player.sendMessage("§eCOMMAND");
+                    player.sendMessage("§e/lc unregistergadget <Gadget>");
+                    player.sendMessage("§e/lc packets");
                     player.sendMessage("§8§m--------------------------------");
                 }
+            } else if (args[0].equalsIgnoreCase("unregistergadget")) {
+                if (!player.hasPermission("lc.admin.unregistergadget")) {
+                    player.sendMessage(MessageManager.getMessage(true, "no-perms", player));
+                    return false;
+                }
+
+                Gadget gadget = null;
+                for (Gadget gadgets : LobbyCore.getInstance().getGadgetManager().getGadgets()) {
+                    if (args[1].equalsIgnoreCase(gadgets.getName())) {
+                        gadget = gadgets;
+                    }
+                }
+
+                if (gadget == null) {
+                    player.sendMessage(MessageManager.getMessage(true, "gadget-doesnt-exist", player));
+                    return false;
+                }
+
+                LobbyCore.getInstance().getGadgetManager().unregisterGadget(gadget);
             }
         }
 

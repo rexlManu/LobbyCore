@@ -21,16 +21,22 @@
 package de.cerus.lobbycore.managers;
 
 import de.cerus.lobbycore.LobbyCore;
-import de.cerus.lobbycore.exeptions.LobbyCorePacketException;
+import de.cerus.lobbycore.events.LobbyCorePacketPreLoadEvent;
+import de.cerus.lobbycore.events.LobbyCorePacketUnloadEvent;
+import de.cerus.lobbycore.exceptions.LobbyCorePacketException;
 import de.cerus.lobbycore.objects.CorePacket;
 import de.cerus.lobbycore.objects.CorePacketInfo;
+import de.cerus.lobbycore.objects.Pagination;
+import de.cerus.lobbycore.utilities.ItemBuilder;
 import org.bukkit.Bukkit;
+import org.bukkit.Material;
 import org.bukkit.command.CommandMap;
 import org.bukkit.command.defaults.BukkitCommand;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.event.HandlerList;
 import org.bukkit.event.Listener;
+import org.bukkit.inventory.ItemStack;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -53,6 +59,7 @@ public class CorePacketManager {
     private List<CorePacket> corePackets;
     private Map<CorePacket, Listener[]> corePacketListeners;
     private Map<CorePacket, BukkitCommand[]> corePacketCommands;
+    private Pagination<ItemStack> packetPagination;
 
     public CorePacketManager() {
         this.corePackets = new ArrayList<>();
@@ -72,6 +79,7 @@ public class CorePacketManager {
         }
 
         if (brake) return false;
+        Bukkit.getPluginManager().callEvent(new LobbyCorePacketPreLoadEvent(file));
 
         Class<? extends CorePacket> mainClass = null;
 
@@ -159,15 +167,20 @@ public class CorePacketManager {
     public boolean unloadCorePacket(CorePacket packet) {
         if (getCorePackets().contains(packet)) {
             packet.onPacketUnload();
-            for (Listener listener : getCorePacketListeners().get(packet)) {
-                HandlerList.unregisterAll(listener);
+            if (getCorePacketListeners().containsKey(packet)) {
+                for (Listener listener : getCorePacketListeners().get(packet)) {
+                    HandlerList.unregisterAll(listener);
+                }
             }
-            for (BukkitCommand command : getCorePacketCommands().get(packet)) {
-                command.unregister(getCommandMap());
+            if (getCorePacketCommands().containsKey(packet)) {
+                for (BukkitCommand command : getCorePacketCommands().get(packet)) {
+                    command.unregister(getCommandMap());
+                }
             }
             getCorePackets().remove(packet);
+            Bukkit.getPluginManager().callEvent(new LobbyCorePacketUnloadEvent(packet));
         }
-        return false;
+        return !getCorePackets().contains(packet);
     }
 
     private CommandMap getCommandMap() {
@@ -183,6 +196,17 @@ public class CorePacketManager {
         return commandMap;
     }
 
+    public void fillPacketPagination() {
+        List<ItemStack> list = new ArrayList<>();
+        for (CorePacket packet : LobbyCore.getInstance().getCorePacketManager().getCorePackets()) {
+            list.add(new ItemBuilder(Material.PAPER).setDisplayname("§a" + packet.getInfo().getConfiguration().getString("name")).setLore(new String[]{
+                    packet.getInfo().getConfiguration().contains("author") ? "§eAuthor: §7" + packet.getInfo().getConfiguration().getString("author") : "§eAuthor: §cNo author",
+                    packet.getInfo().getConfiguration().contains("version") ? "§eVersion: §7" + packet.getInfo().getConfiguration().getString("version") : "§eVersion: §cNo version"
+            }).build());
+        }
+        this.packetPagination = new Pagination<>(3 * 9, list);
+    }
+
     public List<CorePacket> getCorePackets() {
         return corePackets;
     }
@@ -193,5 +217,9 @@ public class CorePacketManager {
 
     public Map<CorePacket, BukkitCommand[]> getCorePacketCommands() {
         return corePacketCommands;
+    }
+
+    public Pagination<ItemStack> getPacketPagination() {
+        return packetPagination;
     }
 }

@@ -31,9 +31,15 @@ public class LobbyCoreRegisterGadgetEvent extends Event {
         this.gadget = gadget;
     }
 
+    private static final HandlerList handlers = new HandlerList();
+
+    public static HandlerList getHandlerList() {
+        return handlers;
+    }
+
     @Override
     public HandlerList getHandlers() {
-        return null;
+        return handlers;
     }
 
     public Gadget getGadget() {

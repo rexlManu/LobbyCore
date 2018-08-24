@@ -18,7 +18,7 @@
  *
  */
 
-package de.cerus.lobbycore.exeptions;
+package de.cerus.lobbycore.exceptions;
 
 public class LobbyCorePacketException extends RuntimeException {
 

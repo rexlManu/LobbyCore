@@ -26,14 +26,18 @@ import org.bukkit.event.HandlerList;
 
 public class LobbyCorePacketUnloadEvent extends Event {
     private CorePacket packet;
-
+    private static final HandlerList handlers = new HandlerList();
     public LobbyCorePacketUnloadEvent(CorePacket packet) {
         this.packet = packet;
     }
 
+    public static HandlerList getHandlerList() {
+        return handlers;
+    }
+
     @Override
     public HandlerList getHandlers() {
-        return null;
+        return handlers;
     }
 
     public CorePacket getPacket() {

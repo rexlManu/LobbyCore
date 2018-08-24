@@ -31,9 +31,15 @@ public class LobbyCorePacketLoadEvent extends Event {
         this.packet = packet;
     }
 
+    private static final HandlerList handlers = new HandlerList();
+
+    public static HandlerList getHandlerList() {
+        return handlers;
+    }
+
     @Override
     public HandlerList getHandlers() {
-        return null;
+        return handlers;
     }
 
     public CorePacket getPacket() {

@@ -7,40 +7,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="faeaa18d-a0b8-4cda-84ae-d6b8310e26ba" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/commands/GadgetsCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/events/LobbyCorePacketLoadEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/events/LobbyCorePacketPreLoadEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/events/LobbyCorePacketUnloadEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/events/LobbyCoreRegisterGadgetEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/exeptions/LobbyCorePacketException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/gadgets/FlyfeatherGadget.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/listeners/BlockBreakBuildListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/listeners/InventoryClickListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/managers/CorePacketManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/managers/GadgetManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/objects/CorePacket.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/objects/CorePacketInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/objects/Gadget.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/utilities/ItemBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/listeners/PlayerQuitListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/objects/Pagination.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/LobbyCore/LobbyCore.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/LobbyCore/LobbyCore.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/LobbyCore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/LobbyCore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/commands/CompassCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/commands/CompassCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/commands/GadgetsCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/commands/GadgetsCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/commands/LobbyCoreCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/commands/LobbyCoreCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/events/LobbyCorePacketLoadEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/events/LobbyCorePacketLoadEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/events/LobbyCorePacketPreLoadEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/events/LobbyCorePacketPreLoadEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/events/LobbyCorePacketUnloadEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/events/LobbyCorePacketUnloadEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/events/LobbyCoreRegisterGadgetEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/events/LobbyCoreRegisterGadgetEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/exeptions/LobbyCorePacketException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/exceptions/LobbyCorePacketException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/listeners/CommandTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/listeners/CommandTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/listeners/PlayerInteractListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/listeners/PlayerInteractListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/listeners/PlayerJoinListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/listeners/PlayerJoinListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/listeners/InventoryClickListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/listeners/InventoryClickListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/managers/CorePacketManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/managers/CorePacketManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/managers/FileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/managers/FileManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/managers/MessageManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/managers/MessageManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/objects/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/objects/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/utilities/UtilClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/utilities/UtilClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/managers/GadgetManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/managers/GadgetManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/de/cerus/lobbycore/LobbyCore.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/cerus/lobbycore/LobbyCore.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/de/cerus/lobbycore/managers/FileManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/cerus/lobbycore/managers/FileManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/cerus/lobbycore/managers/MessageManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/cerus/lobbycore/managers/MessageManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/cerus/lobbycore/objects/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/cerus/lobbycore/objects/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/plugin.yml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -73,23 +58,24 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="14224" />
-          <entry key="txt" value="34" />
+          <entry key="java" value="16182" />
+          <entry key="txt" value="51" />
           <entry key="xml" value="42" />
           <entry key="yml" value="205" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="14224" />
-          <entry key="PLAIN_TEXT" value="34" />
+          <entry key="JAVA" value="16182" />
+          <entry key="PLAIN_TEXT" value="51" />
           <entry key="XML" value="42" />
           <entry key="YAML" value="205" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="61" />
+          <entry key="class" value="1" />
+          <entry key="java" value="85" />
           <entry key="pom" value="1" />
           <entry key="xml" value="4" />
           <entry key="yml" value="4" />
@@ -97,7 +83,8 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="61" />
+          <entry key="CLASS" value="1" />
+          <entry key="JAVA" value="85" />
           <entry key="XML" value="5" />
           <entry key="YAML" value="4" />
         </counts>
@@ -106,80 +93,93 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/LobbyCore.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-9">
-              <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
+            <state relative-caret-position="572">
+              <caret line="151" lean-forward="true" selection-start-line="151" selection-end-line="151" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#5052#5053#0" expanded="true" />
-                <element signature="e#5092#5093#0" expanded="true" />
+                <element signature="e#6504#6505#0" expanded="true" />
+                <element signature="e#6538#6539#0" expanded="true" />
+                <element signature="e#6573#6574#0" expanded="true" />
+                <element signature="e#6603#6604#0" expanded="true" />
+                <element signature="e#6650#6651#0" expanded="true" />
+                <element signature="e#6686#6687#0" expanded="true" />
+                <element signature="e#6724#6725#0" expanded="true" />
+                <element signature="e#6758#6759#0" expanded="true" />
+                <element signature="e#6813#6814#0" expanded="true" />
+                <element signature="e#6853#6854#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/events/LobbyCoreRegisterGadgetEvent.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/listeners/PlayerQuitListener.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="368">
-              <caret line="34" column="56" selection-start-line="34" selection-start-column="56" selection-end-line="34" selection-end-column="56" />
+              <caret line="34" column="378" selection-start-line="34" selection-start-column="378" selection-end-line="34" selection-end-column="378" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#845#846#0" expanded="true" />
-                <element signature="e#872#873#0" expanded="true" />
-                <element signature="e#1040#1041#0" expanded="true" />
-                <element signature="e#979#980#0" expanded="true" />
-                <element signature="e#1008#1009#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/events/LobbyCorePacketPreLoadEvent.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/listeners/PlayerJoinListener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="35" column="57" selection-start-line="35" selection-start-column="57" selection-end-line="35" selection-end-column="57" />
+            <state relative-caret-position="460">
+              <caret line="49" column="8" selection-start-line="47" selection-start-column="8" selection-end-line="49" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/managers/CorePacketManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="290">
+              <caret line="196" selection-start-line="196" selection-end-line="202" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#844#845#0" expanded="true" />
-                <element signature="e#871#872#0" expanded="true" />
-                <element signature="e#1030#1031#0" expanded="true" />
-                <element signature="e#962#963#0" expanded="true" />
-                <element signature="e#995#996#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/events/LobbyCorePacketLoadEvent.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/managers/GadgetManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="34" column="56" selection-start-line="34" selection-start-column="56" selection-end-line="34" selection-end-column="56" />
+            <state relative-caret-position="184">
+              <caret line="39" column="41" selection-start-line="39" selection-start-column="41" selection-end-line="39" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#841#842#0" expanded="true" />
-                <element signature="e#868#869#0" expanded="true" />
-                <element signature="e#1040#1041#0" expanded="true" />
-                <element signature="e#983#984#0" expanded="true" />
-                <element signature="e#1012#1013#0" expanded="true" />
+                <element signature="e#1153#1154#0" expanded="true" />
+                <element signature="e#1201#1202#0" expanded="true" />
+                <element signature="e#1972#1973#0" expanded="true" />
+                <element signature="e#2011#2012#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/events/LobbyCorePacketUnloadEvent.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/listeners/CommandTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="32" column="30" selection-start-line="32" selection-start-column="30" selection-end-line="32" selection-end-column="30" />
+            <state relative-caret-position="483">
+              <caret line="48" column="14" selection-start-line="48" selection-start-column="14" selection-end-line="48" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/listeners/InventoryClickListener.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="296">
+              <caret line="65" column="120" selection-start-line="65" selection-start-column="120" selection-end-line="65" selection-end-column="120" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#843#844#0" expanded="true" />
-                <element signature="e#870#871#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -188,8 +188,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/commands/LobbyCoreCommand.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="530">
-              <caret line="91" column="60" selection-start-line="91" selection-start-column="60" selection-end-line="91" selection-end-column="60" />
+            <state relative-caret-position="368">
+              <caret line="107" column="16" lean-forward="true" selection-start-line="107" selection-start-column="16" selection-end-line="111" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -198,10 +198,13 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/managers/MessageManager.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/commands/GadgetsCommand.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="44" column="25" selection-start-line="44" selection-start-column="25" selection-end-line="44" selection-end-column="25" />
+            <state relative-caret-position="451">
+              <caret line="78" column="8" selection-start-line="78" selection-start-column="8" selection-end-line="78" selection-end-column="8" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -235,31 +238,33 @@
         <option value="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/Settings.java" />
         <option value="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/listeners/BlockBreakBuildListener.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/listeners/CommandTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/commands/CompassCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/utilities/ItemBuilder.java" />
         <option value="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/listeners/PlayerJoinListener.java" />
-        <option value="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/commands/LobbyCoreCommand.java" />
-        <option value="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/utilities/UtilClass.java" />
         <option value="$PROJECT_DIR$/src/main/resources/plugin.yml" />
         <option value="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/objects/Gadget.java" />
         <option value="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/objects/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/managers/MessageManager.java" />
-        <option value="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/commands/GadgetsCommand.java" />
-        <option value="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/managers/FileManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/gadgets/FlyfeatherGadget.java" />
         <option value="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/listeners/PlayerInteractListener.java" />
-        <option value="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/listeners/InventoryClickListener.java" />
-        <option value="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/managers/GadgetManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/exeptions/LobbyCorePacketException.java" />
         <option value="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/objects/CorePacketInfo.java" />
         <option value="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/objects/CorePacket.java" />
-        <option value="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/managers/CorePacketManager.java" />
-        <option value="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/LobbyCore.java" />
-        <option value="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/events/LobbyCoreRegisterGadgetEvent.java" />
+        <option value="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/managers/FileManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/objects/Pagination.java" />
+        <option value="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/utilities/UtilClass.java" />
         <option value="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/events/LobbyCorePacketPreLoadEvent.java" />
-        <option value="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/events/LobbyCorePacketLoadEvent.java" />
         <option value="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/events/LobbyCorePacketUnloadEvent.java" />
+        <option value="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/events/LobbyCoreRegisterGadgetEvent.java" />
+        <option value="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/events/LobbyCorePacketLoadEvent.java" />
+        <option value="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/commands/LobbyCoreCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/listeners/CommandTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/managers/CorePacketManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/commands/GadgetsCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/managers/GadgetManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/listeners/InventoryClickListener.java" />
+        <option value="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/LobbyCore.java" />
+        <option value="$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/listeners/PlayerQuitListener.java" />
       </list>
     </option>
   </component>
@@ -271,10 +276,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="x" value="440" />
+    <option name="y" value="139" />
+    <option name="width" value="1033" />
+    <option name="height" value="739" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -395,7 +400,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1535112656825" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1535121526834" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -408,9 +413,9 @@
       <recent name="de.cerus.lobbycore.utilities" />
     </key>
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="de.cerus.lobbycore.listeners" />
       <recent name="de.cerus.lobbycore.commands" />
       <recent name="de.cerus.lobbycore.objects" />
-      <recent name="de.cerus.lobbycore.listeners" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -450,14 +455,21 @@
       <option name="project" value="LOCAL" />
       <updated>1533382437084</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Updated code">
+      <created>1535112742913</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1535112742913</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.29957357" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21641791" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -473,8 +485,8 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.329718" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.329718" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32929516" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32929516" />
       <window_info anchor="bottom" id="Inspection Results" order="11" weight="0.329718" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -520,7 +532,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Backed up some code" />
     <MESSAGE value="Fixed bugs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed bugs" />
+    <MESSAGE value="Updated code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated code" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -565,32 +578,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/listeners/CommandTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="33" column="13" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/utilities/ItemBuilder.java">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/listeners/PlayerJoinListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="57" column="1" selection-start-line="57" selection-start-column="1" selection-end-line="57" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/utilities/UtilClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="35" column="24" selection-start-line="35" selection-start-column="24" selection-end-line="35" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/plugin.yml">
       <provider selected="true" editor-type-id="text-editor">
@@ -603,16 +592,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
           <caret line="34" column="8" selection-start-line="34" selection-start-column="8" selection-end-line="35" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/managers/FileManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1219">
-          <caret line="78" column="102" selection-start-line="78" selection-start-column="102" selection-end-line="78" selection-end-column="102" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -649,16 +628,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/commands/GadgetsCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1357">
-          <caret line="88" column="116" selection-start-line="88" selection-start-column="116" selection-end-line="88" selection-end-column="116" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/objects/Gadget.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="460">
@@ -666,28 +635,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/listeners/InventoryClickListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="715">
-          <caret line="56" column="70" selection-start-line="56" selection-start-column="70" selection-end-line="56" selection-end-column="70" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/managers/GadgetManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="38" column="41" selection-start-line="38" selection-start-column="41" selection-end-line="38" selection-end-column="41" />
-          <folding>
-            <element signature="e#0#1453#0" expanded="true" />
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/exeptions/LobbyCorePacketException.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/exceptions/LobbyCorePacketException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
           <caret line="25" column="21" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
@@ -726,32 +674,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/managers/CorePacketManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="474">
-          <caret line="172" column="13" lean-forward="true" selection-start-line="172" selection-start-column="13" selection-end-line="172" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#6622#6623#0" expanded="true" />
-            <element signature="e#6656#6657#0" expanded="true" />
-            <element signature="e#6723#6724#0" expanded="true" />
-            <element signature="e#6765#6766#0" expanded="true" />
-            <element signature="e#6836#6837#0" expanded="true" />
-            <element signature="e#6877#6878#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/commands/LobbyCoreCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="530">
-          <caret line="91" column="60" selection-start-line="91" selection-start-column="60" selection-end-line="91" selection-end-column="60" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/managers/MessageManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
@@ -759,71 +681,198 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/LobbyCore.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/managers/FileManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-9">
-          <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
+        <state relative-caret-position="520">
+          <caret line="77" column="108" selection-start-line="77" selection-start-column="108" selection-end-line="77" selection-end-column="108" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#5052#5053#0" expanded="true" />
-            <element signature="e#5092#5093#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/events/LobbyCoreRegisterGadgetEvent.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/utilities/UtilClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="34" column="56" selection-start-line="34" selection-start-column="56" selection-end-line="34" selection-end-column="56" />
+        <state relative-caret-position="322">
+          <caret line="37" column="97" selection-start-line="37" selection-start-column="97" selection-end-line="37" selection-end-column="97" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#845#846#0" expanded="true" />
-            <element signature="e#872#873#0" expanded="true" />
-            <element signature="e#1040#1041#0" expanded="true" />
-            <element signature="e#979#980#0" expanded="true" />
-            <element signature="e#1008#1009#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/objects/Pagination.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="658">
+          <caret line="70" column="5" selection-start-line="70" selection-start-column="5" selection-end-line="70" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1183#1184#0" expanded="true" />
+            <element signature="e#1214#1215#0" expanded="true" />
+            <element signature="e#1245#1246#0" expanded="true" />
+            <element signature="e#1311#1312#0" expanded="true" />
+            <element signature="e#1350#1351#0" expanded="true" />
+            <element signature="e#1407#1408#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/io/File.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="1208" column="26" lean-forward="true" selection-start-line="1208" selection-start-column="26" selection-end-line="1208" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/spigotmc/spigot/1.8.8-R0.1-SNAPSHOT/spigot-1.8.8-R0.1-SNAPSHOT.jar!/org/bukkit/event/player/PlayerJoinEvent.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="11" column="4" lean-forward="true" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="66" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/events/LobbyCorePacketPreLoadEvent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="35" column="57" selection-start-line="35" selection-start-column="57" selection-end-line="35" selection-end-column="57" />
+        <state relative-caret-position="253">
+          <caret line="29" selection-start-line="29" selection-end-line="37" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#844#845#0" expanded="true" />
-            <element signature="e#871#872#0" expanded="true" />
-            <element signature="e#1030#1031#0" expanded="true" />
-            <element signature="e#962#963#0" expanded="true" />
-            <element signature="e#995#996#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/events/LobbyCorePacketLoadEvent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="34" column="56" selection-start-line="34" selection-start-column="56" selection-end-line="34" selection-end-column="56" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#841#842#0" expanded="true" />
-            <element signature="e#868#869#0" expanded="true" />
-            <element signature="e#1040#1041#0" expanded="true" />
-            <element signature="e#983#984#0" expanded="true" />
-            <element signature="e#1012#1013#0" expanded="true" />
+            <element signature="e#901#902#0" expanded="true" />
+            <element signature="e#945#946#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/events/LobbyCorePacketUnloadEvent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="32" column="30" selection-start-line="32" selection-start-column="30" selection-end-line="32" selection-end-column="30" />
+        <state relative-caret-position="414">
+          <caret line="40" column="5" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#843#844#0" expanded="true" />
-            <element signature="e#870#871#0" expanded="true" />
+            <element signature="e#927#928#0" expanded="true" />
+            <element signature="e#963#964#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/events/LobbyCoreRegisterGadgetEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="41" column="5" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#919#920#0" expanded="true" />
+            <element signature="e#955#956#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/events/LobbyCorePacketLoadEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="41" column="5" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#923#924#0" expanded="true" />
+            <element signature="e#959#960#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/listeners/CommandTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="48" column="14" selection-start-line="48" selection-start-column="14" selection-end-line="48" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/managers/CorePacketManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="196" selection-start-line="196" selection-end-line="202" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/commands/LobbyCoreCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="107" column="16" lean-forward="true" selection-start-line="107" selection-start-column="16" selection-end-line="111" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/commands/GadgetsCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="451">
+          <caret line="78" column="8" selection-start-line="78" selection-start-column="8" selection-end-line="78" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/managers/GadgetManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="39" column="41" selection-start-line="39" selection-start-column="41" selection-end-line="39" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1153#1154#0" expanded="true" />
+            <element signature="e#1201#1202#0" expanded="true" />
+            <element signature="e#1972#1973#0" expanded="true" />
+            <element signature="e#2011#2012#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/listeners/InventoryClickListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="65" column="120" selection-start-line="65" selection-start-column="120" selection-end-line="65" selection-end-column="120" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/listeners/PlayerJoinListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="49" column="8" selection-start-line="47" selection-start-column="8" selection-end-line="49" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/listeners/PlayerQuitListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="34" column="378" selection-start-line="34" selection-start-column="378" selection-end-line="34" selection-end-column="378" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/de/cerus/lobbycore/LobbyCore.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="572">
+          <caret line="151" lean-forward="true" selection-start-line="151" selection-end-line="151" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#6504#6505#0" expanded="true" />
+            <element signature="e#6538#6539#0" expanded="true" />
+            <element signature="e#6573#6574#0" expanded="true" />
+            <element signature="e#6603#6604#0" expanded="true" />
+            <element signature="e#6650#6651#0" expanded="true" />
+            <element signature="e#6686#6687#0" expanded="true" />
+            <element signature="e#6724#6725#0" expanded="true" />
+            <element signature="e#6758#6759#0" expanded="true" />
+            <element signature="e#6813#6814#0" expanded="true" />
+            <element signature="e#6853#6854#0" expanded="true" />
           </folding>
         </state>
       </provider>
